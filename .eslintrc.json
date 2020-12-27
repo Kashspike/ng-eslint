@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:@angular-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2015
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "ignorePatterns": ["src/test.ts", "e2e/*", "src/**/*.spec.ts"],
+    "rules": {
+      "camelcase": ["error", { "properties": "always" }],
+      "quotes": ["error", "single"],
+      "arrow-body-style": ["warn", "as-needed"],
+      "max-lines": ["error", {"max": 400 }],
+      "max-lines-per-function": ["error", 21],
+      "max-params": ["error", { "max": 5 }],
+      "@typescript-eslint/no-inferrable-types": "off",
+      "@typescript-eslint/typedef": ["error", {
+          "variableDeclaration": true,
+          "memberVariableDeclaration": true,
+          "propertyDeclaration": true
+        }
+      ],
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "max-depth": ["error", 1],
+      "no-empty": "error",
+      "@angular-eslint/no-lifecycle-call": "error",
+      "@angular-eslint/no-pipe-impure": "error",
+      "@angular-eslint/directive-selector": ["error", {
+          "type": "attribute",
+          "prefix": "ourprefix",
+          "style": "camelCase"
+        }
+      ],
+      "@angular-eslint/component-selector": ["error", {
+          "type": "element",
+          "prefix": "ourcomponent",
+          "style": "kebab-case"
+        }
+      ]
+    }
+}
